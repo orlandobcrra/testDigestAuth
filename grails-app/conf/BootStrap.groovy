@@ -1,3 +1,5 @@
+import com.testapp.*
+
 class BootStrap {
 
     def init = { servletContext ->
