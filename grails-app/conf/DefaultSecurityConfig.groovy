@@ -22,6 +22,8 @@ import org.springframework.security.web.authentication.WebAuthenticationDetails
 
 security {
 
+	println 'DefaultSecurityConfig'
+
 	/** misc properties */
 
 	active = true
@@ -74,7 +76,7 @@ security {
 	apf.usernameParameter = UPAF.SPRING_SECURITY_FORM_USERNAME_KEY // 'j_username'
 	apf.passwordParameter = UPAF.SPRING_SECURITY_FORM_PASSWORD_KEY // 'j_password'
 	apf.continueChainBeforeSuccessfulAuthentication = false
-	apf.allowSessionCreation = true
+	apf.allowSessionCreation = false
 	apf.postOnly = true
 
 	// failureHandler
@@ -92,7 +94,7 @@ security {
 
 	// requestCache
 	requestCache.onlyOnGet = false
-	requestCache.createSession = true
+	requestCache.createSession = false
 
 	// redirectStrategy
 	redirectStrategy.contextRelative = false
