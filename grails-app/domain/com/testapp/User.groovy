@@ -3,6 +3,7 @@ package com.testapp
 class User {
 
 	transient springSecurityService
+	transient passwordEncoder 
 
 	String username
 	String password
@@ -36,5 +37,6 @@ class User {
 
 	protected void encodePassword() {
 		password = springSecurityService.encodePassword(password)
+		//password = passwordEncoder.encodePassword(password, username) 
 	}
 }

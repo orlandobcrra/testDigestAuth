@@ -94,3 +94,23 @@ log4j = {
 grails.plugins.springsecurity.userLookup.userDomainClassName = 'com.testapp.User'
 grails.plugins.springsecurity.userLookup.authorityJoinClassName = 'com.testapp.UserRole'
 grails.plugins.springsecurity.authority.className = 'com.testapp.Role'
+
+grails.plugins.springsecurity.securityConfigType = 'InterceptUrlMap'
+grails.plugins.springsecurity.interceptUrlMap = [
+   '/secure/**':                                ['ROLE_ADMIN'],
+   '/normal/**':                                ['ROLE_ADMIN']
+]
+
+/*
+grails.plugins.springsecurity.useDigestAuth = true
+grails.plugins.springsecurity.digest.realmName = "Protected API"
+
+//Exclude normal controllers from basic auth filter. Just the JSON API is included
+grails.plugins.springsecurity.filterChain.chainMap = [
+'/secure/**': 'JOINED_FILTERS,-exceptionTranslationFilter',
+'/**': 'JOINED_FILTERS,-digestAuthenticationFilter,-digestExceptionTranslationFilter'
+]
+
+apf.allowSessionCreation = false
+apf.filterProcessesUrl = 'jajaj'
+*/
